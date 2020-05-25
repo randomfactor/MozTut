@@ -1,0 +1,35 @@
+﻿@page
+@model MozTut.Pages.Ex04Model
+@{
+    ViewData["Title"] = "Ex04";
+    Layout = "~/Pages/Shared/_LayoutGL.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ex01.css" />
+}
+
+@section Scripts {
+    <script src="~/js/gl-matrix.js"></script>
+    <script src="~/js/ex04.js"></script>
+}
+
+<hr />
+<div class="canvas-container">
+    <canvas id="glcanvas"></canvas>
+</div>
+<hr />
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // fix resolution
+        const canvas = document.querySelector("#glcanvas");
+        canvas.width = canvas.parentNode.offsetWidth;
+        canvas.height = canvas.parentNode.offsetHeight;
+
+        // call webgl program
+        main();
+    });
+
+</script>
